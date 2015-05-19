@@ -1,0 +1,13 @@
+c:\users\administrator\documents\visual studio 2010\Projects\ProgramFiles.2.0\DAL\bin\Debug\DAL.dll.config
+c:\users\administrator\documents\visual studio 2010\Projects\ProgramFiles.2.0\DAL\bin\Debug\DAL.dll
+c:\users\administrator\documents\visual studio 2010\Projects\ProgramFiles.2.0\DAL\bin\Debug\DAL.pdb
+c:\users\administrator\documents\visual studio 2010\Projects\ProgramFiles.2.0\DAL\obj\Debug\DAL.dll
+c:\users\administrator\documents\visual studio 2010\Projects\ProgramFiles.2.0\DAL\obj\Debug\DAL.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\ProgramFiles.2.0\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Sendy\Documents\Visual Studio 2010\Projects\ProgramFiles.2.0\DAL\bin\Debug\ProgramDAL.cs
+C:\Users\Sendy\Documents\Visual Studio 2010\Projects\ProgramFiles.2.0\DAL\bin\Debug\DAL.dll.config
+C:\Users\Sendy\Documents\Visual Studio 2010\Projects\ProgramFiles.2.0\DAL\bin\Debug\DAL.dll
+C:\Users\Sendy\Documents\Visual Studio 2010\Projects\ProgramFiles.2.0\DAL\bin\Debug\DAL.pdb
+C:\Users\Sendy\Documents\Visual Studio 2010\Projects\ProgramFiles.2.0\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Sendy\Documents\Visual Studio 2010\Projects\ProgramFiles.2.0\DAL\obj\Debug\DAL.dll
+C:\Users\Sendy\Documents\Visual Studio 2010\Projects\ProgramFiles.2.0\DAL\obj\Debug\DAL.pdb

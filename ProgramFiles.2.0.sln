@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{D7DE634A-BF70-4E1B-AD58-21FF2556BD57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{78CFEA6C-44FE-4340-9EEC-93D9A7AE9E70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAL", "BAL\BAL.csproj", "{A2BC361F-1357-4FC9-A208-E5BE29C01A2D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D7DE634A-BF70-4E1B-AD58-21FF2556BD57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7DE634A-BF70-4E1B-AD58-21FF2556BD57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7DE634A-BF70-4E1B-AD58-21FF2556BD57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7DE634A-BF70-4E1B-AD58-21FF2556BD57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78CFEA6C-44FE-4340-9EEC-93D9A7AE9E70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78CFEA6C-44FE-4340-9EEC-93D9A7AE9E70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78CFEA6C-44FE-4340-9EEC-93D9A7AE9E70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78CFEA6C-44FE-4340-9EEC-93D9A7AE9E70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2BC361F-1357-4FC9-A208-E5BE29C01A2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2BC361F-1357-4FC9-A208-E5BE29C01A2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2BC361F-1357-4FC9-A208-E5BE29C01A2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2BC361F-1357-4FC9-A208-E5BE29C01A2D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

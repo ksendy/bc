@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ProgramFile" Class="dbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=PHEE\SQLEXPRESS;Initial Catalog=ProgramFile;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="ProgramFileConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.MsCD" Member="MsCDs">
+    <Type Name="MsCD">
+      <Column Name="idCD" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="ukuran" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="biaya" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TopLink" Member="TopLinks">
+    <Type Name="TopLink">
+      <Column Name="idLink" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="links" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[level]" Member="level" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MsComment" Member="MsComments">
+    <Type Name="MsComment">
+      <Column Name="idComment" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idProgram" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="idCustomer" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="MsCustomer_MsComment" Member="MsCustomer" ThisKey="idComment" OtherKey="idCustomer" Type="MsCustomer" IsForeignKey="true" />
+      <Association Name="MsProgram_MsComment" Member="MsProgram" ThisKey="idProgram" OtherKey="idProgram" Type="MsProgram" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MsCustomer" Member="MsCustomers">
+    <Type Name="MsCustomer">
+      <Column Name="idCustomer" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nama" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="alamat" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="pwd" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="kodepos" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="telp" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="provinsi" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="kota" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="img" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="lvl" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="MsCustomer_MsComment" Member="MsComment" ThisKey="idCustomer" OtherKey="idComment" Type="MsComment" Cardinality="One" />
+      <Association Name="MsCustomer_MsPenjualan" Member="MsPenjualans" ThisKey="idCustomer" OtherKey="idCustomer" Type="MsPenjualan" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MsPenjualan" Member="MsPenjualans">
+    <Type Name="MsPenjualan">
+      <Column Name="idPenjualan" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idCustomer" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="tglTrans" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="detail" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="MsCustomer_MsPenjualan" Member="MsCustomer" ThisKey="idCustomer" OtherKey="idCustomer" Type="MsCustomer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MsProgram" Member="MsPrograms">
+    <Type Name="MsProgram">
+      <Column Name="idProgram" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="descr" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="size" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="rating" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="img" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="os" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="license" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="technology" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="MsProgram_MsComment" Member="MsComments" ThisKey="idProgram" OtherKey="idProgram" Type="MsComment" />
+    </Type>
+  </Table>
+</Database>

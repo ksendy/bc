@@ -1,0 +1,15 @@
+C:\Users\Administrator\documents\visual studio 2010\Projects\ProgramFiles.2.0\BAL\bin\Debug\BAL.dll
+C:\Users\Administrator\documents\visual studio 2010\Projects\ProgramFiles.2.0\BAL\bin\Debug\BAL.pdb
+C:\Users\Administrator\documents\visual studio 2010\Projects\ProgramFiles.2.0\BAL\bin\Debug\DAL.dll
+C:\Users\Administrator\documents\visual studio 2010\Projects\ProgramFiles.2.0\BAL\bin\Debug\DAL.pdb
+C:\Users\Administrator\documents\visual studio 2010\Projects\ProgramFiles.2.0\BAL\obj\Debug\BAL.dll
+C:\Users\Administrator\documents\visual studio 2010\Projects\ProgramFiles.2.0\BAL\obj\Debug\BAL.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\ProgramFiles.2.0\BAL\obj\Debug\BAL.csprojResolveAssemblyReference.cache
+C:\Users\Sendy\Documents\Visual Studio 2010\Projects\ProgramFiles.2.0\BAL\bin\Debug\ProgramDAL.cs
+C:\Users\Sendy\Documents\Visual Studio 2010\Projects\ProgramFiles.2.0\BAL\bin\Debug\BAL.dll
+C:\Users\Sendy\Documents\Visual Studio 2010\Projects\ProgramFiles.2.0\BAL\bin\Debug\BAL.pdb
+C:\Users\Sendy\Documents\Visual Studio 2010\Projects\ProgramFiles.2.0\BAL\bin\Debug\DAL.dll
+C:\Users\Sendy\Documents\Visual Studio 2010\Projects\ProgramFiles.2.0\BAL\bin\Debug\DAL.pdb
+C:\Users\Sendy\Documents\Visual Studio 2010\Projects\ProgramFiles.2.0\BAL\obj\Debug\BAL.csprojResolveAssemblyReference.cache
+C:\Users\Sendy\Documents\Visual Studio 2010\Projects\ProgramFiles.2.0\BAL\obj\Debug\BAL.dll
+C:\Users\Sendy\Documents\Visual Studio 2010\Projects\ProgramFiles.2.0\BAL\obj\Debug\BAL.pdb

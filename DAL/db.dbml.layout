@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="db">
+  <DataContextMoniker Name="/dbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a3364467-e82d-4921-92f2-c87d3bccd10b" absoluteBounds="6.25, 1, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dbDataContext/MsCD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4b70e474-6cf0-44a1-9295-028a3f9a82c9" absoluteBounds="6.265, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0a8e1514-df05-4fc6-8808-e43663ef5909" absoluteBounds="6.25, 3.5, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/dbDataContext/TopLink" />
+      <nestedChildShapes>
+        <elementListCompartment Id="71927fdd-28a1-44e8-ab9e-6695330616f6" absoluteBounds="6.265, 3.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="106002d5-dc0b-4848-857e-19f6ab8df8f2" absoluteBounds="3.5, 3.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dbDataContext/MsComment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e5992b34-da11-4bed-a3e2-7ddb7e39c425" absoluteBounds="3.515, 4.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="06d3f252-716b-4380-8143-fdf9e1e4d0a8" absoluteBounds="0.75, 1.125, 2, 3.1170068359375009">
+      <DataClassMoniker Name="/dbDataContext/MsCustomer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e97bf0fd-4610-4b00-88e0-e05c4f169481" absoluteBounds="0.765, 1.585, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0103f3cb-d506-492f-8bee-59227892621a" absoluteBounds="3.375, 1.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dbDataContext/MsPenjualan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f4be0575-3aef-419d-ab0d-74742fde3cd1" absoluteBounds="3.39, 1.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7a20de5c-eade-4fa0-bcea-978d71cee265" absoluteBounds="0.75, 5.375, 2, 2.7324039713541657">
+      <DataClassMoniker Name="/dbDataContext/MsProgram" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c2707cbf-64ec-4e1b-92b2-8f143c256084" absoluteBounds="0.765, 5.835, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 3.93350341796875); (3.5 : 3.93350341796875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dbDataContext/MsCustomer/MsCustomer_MsComment" />
+      <nodes>
+        <classShapeMoniker Id="06d3f252-716b-4380-8143-fdf9e1e4d0a8" />
+        <classShapeMoniker Id="106002d5-dc0b-4848-857e-19f6ab8df8f2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.91429768880208); (3.375 : 1.91429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dbDataContext/MsCustomer/MsCustomer_MsPenjualan" />
+      <nodes>
+        <classShapeMoniker Id="06d3f252-716b-4380-8143-fdf9e1e4d0a8" />
+        <classShapeMoniker Id="0103f3cb-d506-492f-8bee-59227892621a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.74120198567708); (4.5 : 6.74120198567708); (4.5 : 5.20359537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dbDataContext/MsProgram/MsProgram_MsComment" />
+      <nodes>
+        <classShapeMoniker Id="7a20de5c-eade-4fa0-bcea-978d71cee265" />
+        <classShapeMoniker Id="106002d5-dc0b-4848-857e-19f6ab8df8f2" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
