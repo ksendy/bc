@@ -30,11 +30,11 @@ namespace UI
                 {
                     //cetak
                     isi += "<div class='grid1_of_4'>";
-                    isi += "<a href='details.aspx?id=" + ub.idCustomer + "'>";
-                    isi += "<img src='/images/usrImg/" + ub.img + "' alt=''/>";
-                    isi += "<h4 style='color:#777777;'>" + ub.nama + "</h4>";
+                    isi += "<a href='/User/User.aspx?id=" + ub.idCustomer + "'>";
+                    isi += "<img class='GbrUsr' src='/images/usrImg/" + ub.img + "' alt=''/>";
+                    isi += "<h4 class='judulUsr'>" + ub.nama + "</h4>";
                     isi += "<div class='price'>";
-                    isi += "<h4 style='color:#777777;'>" + ub.username + " <span>View</span></h4>";
+                    isi += "<h4 class='judulUsr'>" + ub.username + " <span>View</span></h4>";
                     isi += "</div>";
                     isi += "<span class='b_btm'></span><div class='clear'></div>";
                     isi += "</a>";

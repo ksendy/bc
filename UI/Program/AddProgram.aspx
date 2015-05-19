@@ -2,6 +2,7 @@
     CodeBehind="AddProgram.aspx.cs" Inherits="UI.AddProgram" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <title>Add Program</title>
     <style type="text/css">
         .imgUpload
         {
@@ -33,12 +34,6 @@
                         <div>
                             <asp:Image ID="Image1" runat="server" Visible="False" CssClass="imgUpload" /><br />
                             <asp:FileUpload ID="FileUploadControl" runat="server" />
-                            <br />
-                            <asp:Button runat="server" ID="UploadButton" Text="Upload" OnClick="UploadButton_Click"
-                                CausesValidation="False" />
-                            <br />
-                            <br />
-                            <asp:Label runat="server" ID="StatusLabel" Text="Upload status: " Visible="False" />
                             <br />
                             <br />
                         </div>
@@ -82,7 +77,7 @@
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="os"
                                         Display="Dynamic" ErrorMessage="OS Empty" ForeColor="Red"></asp:RequiredFieldValidator>
                                 </label>
-                            <asp:TextBox ID="os" CssClass="textbox" runat="server"></asp:TextBox></span>
+                                <asp:TextBox ID="os" CssClass="textbox" runat="server"></asp:TextBox></span>
                         </div>
                         <div>
                             <span>
@@ -91,7 +86,7 @@
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="license"
                                         Display="Dynamic" ErrorMessage="License Empty" ForeColor="Red"></asp:RequiredFieldValidator>
                                 </label>
-                            <asp:TextBox ID="license" CssClass="textbox" runat="server"></asp:TextBox></span>
+                                <asp:TextBox ID="license" CssClass="textbox" runat="server"></asp:TextBox></span>
                         </div>
                         <div>
                             <span>

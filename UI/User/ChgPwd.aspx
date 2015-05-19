@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProgramFiles.Master" AutoEventWireup="true" CodeBehind="ChgPwd.aspx.cs" Inherits="UI.ChgPwd" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<title>Change Password</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 

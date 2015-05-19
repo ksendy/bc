@@ -2,9 +2,7 @@
     CodeBehind="home.aspx.cs" Inherits="UI.home" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
-
-    </style>
+<title>Home</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!----start-cursual---->

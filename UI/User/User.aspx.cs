@@ -12,7 +12,7 @@ namespace UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string uid = Request.QueryString["uid"];
+            string uid = Request.QueryString["id"];
             if (uid == null)
             {
                 Response.Redirect("home.aspx");
@@ -25,8 +25,9 @@ namespace UI
                     MsUserBAL mu = new MsUserBAL();
 
                     mu = ub.GetUserById(uid);
-                    
-                    Image1.ImageUrl = mu.img;
+
+                    Image1.ImageUrl = "/images/usrImg/" + mu.img;
+                    Image1.Visible = true;
                     Names.Text = mu.nama;
                     level.Text = Convert.ToString(mu.lvl);
                     usrnm.Text = mu.username;

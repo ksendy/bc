@@ -62,10 +62,5 @@ namespace UI
             { Session["msg"] = "Add Program Failed"; }
             Response.Redirect("/home.aspx");
         }
-
-        protected void UploadButton_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

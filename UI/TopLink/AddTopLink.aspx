@@ -2,6 +2,7 @@
     CodeBehind="AddTopLink.aspx.cs" Inherits="UI.AddTopLink" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<title>Add Top Link</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="main_bg">

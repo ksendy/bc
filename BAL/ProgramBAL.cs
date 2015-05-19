@@ -92,7 +92,11 @@ namespace BAL
             }
             return lp;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public bool CekProgram(string id)
         {
             ProgramDAL dal = new ProgramDAL();

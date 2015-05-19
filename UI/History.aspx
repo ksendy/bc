@@ -2,7 +2,7 @@
     CodeBehind="History.aspx.cs" Inherits="UI.History" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
+<title>Order History</title>
 <style type="text/css">
 td
 {

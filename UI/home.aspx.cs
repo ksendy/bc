@@ -29,8 +29,8 @@ namespace UI
                 texthtml += "<div class='gambar'><img style='margin:auto;' src='/images/ProgramImg/" + b.img + "' alt=''/></div>";
                 texthtml += "<h3>" + b.title + "</h3>";
                 int g = b.descr.Length;
-                if (g >= 35)
-                { g = 35; }
+                if (g >= 30)
+                { g = 30; }
                 if (Session["username"] != null || Session["lvl"] != null)
                 {
                     texthtml += "<div class='price'><h4>" + b.descr.Substring(0, g) + " ... More >></h4></div>";

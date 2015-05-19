@@ -132,7 +132,7 @@ body {
     display: none;
 	cursor: pointer;
     float:left;
-	background: url(../images/nav_icon.png) 18% 52% no-repeat;
+	background: url(/images/nav_icon.png) 18% 52% no-repeat;
 	height: 35px;
 	width: 35px;
 }
@@ -174,7 +174,7 @@ body {
 	padding: 5px 0;
 }
 .top-nav-right input[type="submit"]{
-	background: url(../images/search-icon.png) no-repeat 42% 50% #bd7f1c;
+	background: url(/images/search-icon.png) no-repeat 42% 50% #bd7f1c;
 	padding:10px 20px;
 	border: none;
 	display: block;
@@ -187,7 +187,7 @@ body {
 	-webkit-transition: 0.5s ease;
 }
 .top-nav-right input[type="submit"]:hover{
-	background: url(../images/search-icon.png) no-repeat 42% 50% #996004;
+	background: url(/images/search-icon.png) no-repeat 42% 50% #996004;
 }
 .top-nav-right input[type="text"]{
 	border:none;
@@ -224,7 +224,7 @@ body {
 }
 .search_box form input[type="submit"] {
 	-webkit-appearance: none;
-	background: url('../images/search.png') no-repeat 10px 5px;
+	background: url('/images/search.png') no-repeat 10px 5px;
 	padding: 6px 0px;
 	border: none;
 	cursor: pointer;
@@ -390,7 +390,7 @@ body {
 	vertical-align:middle;
 }
 .c1{
-	background: url(../images/cart.png) no-repeat 0px 0px;
+	background: url(/images/cart.png) no-repeat 0px 0px;
 	width: 46px;
 	height: 46px;
 	display: inline-block;
@@ -399,7 +399,7 @@ body {
 }
 
 .c2{
-	background: url(../images/user.png) no-repeat 0px 0px;
+	background: url(/images/user.png) no-repeat 0px 0px;
 	width: 46px;
 	height: 46px;
 	display: inline-block;

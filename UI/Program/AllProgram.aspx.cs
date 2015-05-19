@@ -18,7 +18,7 @@ namespace UI
             { Response.Write("<script>alert('" + Session["msg"] + "')</script>"); Session["msg"] = null; }
             if (Convert.ToInt32(Session["lvl"]) == 3)
             { tec.InnerHtml += "<a href='/Program/AddProgram.aspx'><div class='tech'>ADD PROGRAM</div></a>"; }
-            
+
             //inisiasi pagination
             int perPage = 9;
             int page = Convert.ToInt32(Request.QueryString["page"]);
@@ -42,6 +42,12 @@ namespace UI
                 {
                     //cetak
                     isi += "<div class='grid1_of_3'>";
+                    //display delete kalau admin
+                    if (Convert.ToInt32(Session["lvl"]) == 3)
+                    {
+                        isi += "<div class='del'><a href='/Program/DeleteProgram.aspx?id=" + probal.idProgram + "'>";
+                        isi += "<img src='/images/delete.png'/></a></div>";
+                    }
                     isi += "<a href='details.aspx?id=" + probal.idProgram + "'>";
                     isi += "<div class='gambar'><img src='/images/ProgramImg/" + probal.img + "' alt=''/></div>";
                     isi += "<h3>" + probal.title + "</h3>";
@@ -68,10 +74,10 @@ namespace UI
             int k = (lb.Count % perPage) != 0 ? 0 : 1;
             k = lb.Count == perPage ? 0 : 1;
             int j = (lb.Count / perPage) + k;
-            string path = (Request.QueryString["t"] == null) ? "/Program/Allprogram.aspx?" : "/Program/Allprogram.aspx?t="+tt+"&";
+            string path = (Request.QueryString["t"] == null) ? "/Program/Allprogram.aspx?" : "/Program/Allprogram.aspx?t=" + tt + "&";
             do
             {
-                pagination.InnerHtml += " &nbsp; <a href='"+path+"page=" + i + "'>" + i + "</a> &nbsp; ";
+                pagination.InnerHtml += " &nbsp; <a href='" + path + "page=" + i + "'>" + i + "</a> &nbsp; ";
                 i++;
             } while (i <= j);
         }

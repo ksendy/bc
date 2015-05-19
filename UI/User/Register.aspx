@@ -2,6 +2,7 @@
     CodeBehind="Register.aspx.cs" Inherits="UI.Register" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<title>Register</title>
     <style type="text/css">
         .imgUpload
         {

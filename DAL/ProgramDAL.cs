@@ -113,6 +113,12 @@ namespace DAL
                        select baris;
             return cari.ToList();
         }
+        /// <summary>
+        /// untuk cek Di DB,
+        /// apakah program ada atau tidak
+        /// </summary>
+        /// <param name="id">id Program</param>
+        /// <returns>return  false jika yang dicari tidak ada, true jika ada</returns>
         public bool CekProgram(string id)
         {
             dbDataContext db = new dbDataContext();
