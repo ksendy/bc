@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AboutUs.aspx" />
+    <Content Include="Program\EditProgram.aspx" />
     <Content Include="Program\DeleteProgram.aspx" />
     <Content Include="Program\AddProgram.aspx" />
     <Content Include="CekOut.aspx" />
@@ -60,7 +61,6 @@
     <Content Include="Login.aspx" />
     <Content Include="TopLink\AddTopLink.aspx" />
     <Content Include="Program\AllProgram.aspx" />
-    <Content Include="User\UserDetail.aspx" />
     <Content Include="User\AllUser.aspx" />
     <Content Include="User\ChgPwd.aspx" />
     <Content Include="css\owl.carousel.css" />
@@ -155,7 +155,6 @@
     <Content Include="images\w_pic5.jpg" />
     <Content Include="images\w_pic6.jpg" />
     <Content Include="index.aspx" />
-    <Content Include="Program\InputProgram.aspx" />
     <Content Include="js\cloud-zoom.1.0.3.min.js" />
     <Content Include="js\easing.js" />
     <Content Include="js\fliplightbox.min.js" />
@@ -190,6 +189,13 @@
     </Compile>
     <Compile Include="AboutUs.aspx.designer.cs">
       <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Program\EditProgram.aspx.cs">
+      <DependentUpon>EditProgram.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Program\EditProgram.aspx.designer.cs">
+      <DependentUpon>EditProgram.aspx</DependentUpon>
     </Compile>
     <Compile Include="Program\DeleteProgram.aspx.cs">
       <DependentUpon>DeleteProgram.aspx</DependentUpon>
@@ -255,13 +261,6 @@
     <Compile Include="Program\AllProgram.aspx.designer.cs">
       <DependentUpon>AllProgram.aspx</DependentUpon>
     </Compile>
-    <Compile Include="User\UserDetail.aspx.cs">
-      <DependentUpon>UserDetail.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="User\UserDetail.aspx.designer.cs">
-      <DependentUpon>UserDetail.aspx</DependentUpon>
-    </Compile>
     <Compile Include="User\AllUser.aspx.cs">
       <DependentUpon>AllUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -296,13 +295,6 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Program\InputProgram.aspx.cs">
-      <DependentUpon>InputProgram.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Program\InputProgram.aspx.designer.cs">
-      <DependentUpon>InputProgram.aspx</DependentUpon>
     </Compile>
     <Compile Include="Logout.aspx.cs">
       <DependentUpon>Logout.aspx</DependentUpon>

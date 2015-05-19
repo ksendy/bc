@@ -93,14 +93,22 @@ namespace BAL
             return lp;
         }
         /// <summary>
-        /// 
+        /// untuk cek Di DB,
+        /// apakah program ada atau tidak.
+        /// Return  false jika yang dicari tidak ada, true jika ada.
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <param name="id">id Program</param>
+        /// <returns>return  false jika yang dicari tidak ada, true jika ada</returns>
         public bool CekProgram(string id)
         {
             ProgramDAL dal = new ProgramDAL();
             return dal.CekProgram(id);
+        }
+
+        public bool UpdateStatus(string id)
+        {
+            ProgramDAL dal = new ProgramDAL();
+            return dal.UpdateStatus(id);
         }
     }
 }

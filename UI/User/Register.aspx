@@ -34,14 +34,7 @@
                         <div>
                             <asp:Image ID="Image1" runat="server" Visible="False" CssClass="imgUpload" /><br />
                             <asp:FileUpload ID="FileUploadControl" runat="server" />
-                            <br />
-                            <asp:Button runat="server" ID="UploadButton" Text="Upload" 
-                                OnClick="UploadButton_Click" CausesValidation="False" />
-                            <br />
-                            <br />
-                            <asp:Label runat="server" ID="StatusLabel" Text="Upload status: " Visible="False" />
-                            <br />
-                            <br />
+                            <br />                        
                         </div>
                         <div>
                             <span>

@@ -92,27 +92,7 @@
                                     Kode Pos</label></span> <span>
                                         <asp:TextBox ID="kdpos" CssClass="textbox" runat="server"></asp:TextBox></span>
                         </div>
-                        <div>
-                            <h2>Change Password</h2>
-                        </div>
-                        <div>
-                            <span>
-                                <label>
-                                    Old Password</label></span> <span>
-                                        <asp:TextBox ID="oldpwrd" runat="server" CssClass="pwds" TextMode="Password"></asp:TextBox></span>
-                        </div>
-                        <div>
-                            <span>
-                                <label>
-                                    New Password</label></span> <span>
-                                        <asp:TextBox ID="newpwrd" CssClass="pwds" TextMode="Password" runat="server"></asp:TextBox></span>
-                        </div>
-                        <div>
-                            <span>
-                                <label>
-                                    Re-Enter Password</label></span> <span>
-                                        <asp:TextBox ID="repwrd" CssClass="pwds" TextMode="Password" runat="server"></asp:TextBox></span>
-                        </div>
+                       
                         <div>
                             <span>
                                 <asp:Button ID="Button1" runat="server" Text="Update" OnClick="Button1_Click" /></span>

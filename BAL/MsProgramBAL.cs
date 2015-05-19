@@ -28,6 +28,8 @@ namespace BAL
         { get; set; }
         public string technology
         { get; set; }
+        public string status
+        { get; set; }
 
 
         public MsProgramBAL ConvertToMsProgramBAL(MsProgram pro)
@@ -43,7 +45,8 @@ namespace BAL
                 date = pro.date.ToString(),
                 os = pro.os,
                 license = pro.license,
-                technology = pro.technology
+                technology = pro.technology,
+                status = pro.status.ToString(),
             };
             return baru;
         }
@@ -61,7 +64,8 @@ namespace BAL
                 date = Convert.ToDateTime(pro.date),
                 os = pro.os,
                 license = pro.license,
-                technology = pro.technology
+                technology = pro.technology,
+                status = Convert.ToChar(pro.status),
             };
             return baru;
         }

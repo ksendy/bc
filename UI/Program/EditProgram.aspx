@@ -1,40 +1,18 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProgramFiles.Master" AutoEventWireup="true"
-    CodeBehind="AddProgram.aspx.cs" Inherits="UI.AddProgram" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProgramFiles.Master" AutoEventWireup="true" CodeBehind="EditProgram.aspx.cs" Inherits="UI.EditProgram" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <title>Add Program</title>
-    <style type="text/css">
-        .imgUpload
-        {
-            max-width: 200px;
-        }
-        .pwds
-        {
-            font-family: 'Source Sans Pro' , sans-serif;
-            background: #FFFFFF;
-            border: 1px solid #E7E7E7;
-            color: rgba(85, 81, 81, 0.84);
-            padding: 8px;
-            display: block;
-            width: 96.3333%;
-            outline: none;
-            -webkit-appearance: none;
-            text-transform: capitalize;
-        }
-    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="main_bg">
+
+<div class="main_bg">
         <div class="wrap">
             <div class="main">
                 <div class="contact">
                     <div class="contact-form">
                         <h2>ADD PROGRAM</h2>
                         <div>
-                            <asp:Image ID="Image1" runat="server" Visible="False" CssClass="imgUpload" /><br />
+                            <asp:Image ID="Image1" runat="server" Visible="true" CssClass="imgUpload" /><br />
                             <asp:FileUpload ID="FileUploadControl" runat="server" />
-                            <br />
-                            <br />
+                            <br />                  
                         </div>
                         <div>
                             <span>
@@ -98,7 +76,7 @@
                         </div>
                         <div>
                             <span>
-                                <asp:Button ID="Button1" runat="server" Text="Add Program" OnClick="Button1_Click" /></span>
+                                <asp:Button ID="Button1" runat="server" Text="EDIT" OnClick="Button1_Click" /></span>
                         </div>
                     </div>
                     <div class="clear">
@@ -107,4 +85,5 @@
             </div>
         </div>
     </div>
+
 </asp:Content>

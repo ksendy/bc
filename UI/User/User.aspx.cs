@@ -13,10 +13,8 @@ namespace UI
         protected void Page_Load(object sender, EventArgs e)
         {
             string uid = Request.QueryString["id"];
-            if (uid == null)
-            {
-                Response.Redirect("home.aspx");
-            }
+            if (uid == null || Session["username"] == null || Convert.ToInt32(Session["lvl"]) != 3)
+            { Session["msg"] = "Hacking Attempt!"; Response.Redirect("/home.aspx"); }
             else
             {
                 if (!IsPostBack)

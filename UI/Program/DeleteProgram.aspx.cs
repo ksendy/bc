@@ -25,7 +25,8 @@ namespace UI
                 Session["msg"] = "Hacking Attempt!";
                 Response.Redirect("/home.aspx");
             }
-            Session["msg"] = (pro.DeleteProgram(id)) ? "Delete Success!" : "Delete Failed";
+            //Session["msg"] = (pro.DeleteProgram(id)) ? "Delete Success!" : "Delete Failed";
+            Session["msg"] = (pro.UpdateStatus(id)) ? "Delete Success!" : "Delete Failed";
             Response.Redirect("/Program/AllProgram.aspx");
 
         }

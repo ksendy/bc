@@ -33,6 +33,7 @@ namespace UI
                 license = license.Text,
                 technology = tech.Text,
                 rating = 0,
+                status = "1",
                 date = Convert.ToString(DateTime.Now),
                 img = "default.png",
             };

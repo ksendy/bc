@@ -63,10 +63,5 @@ namespace UI
             else
             { Response.Write("<script>alert('Register Failed')</script>"); }
         }
-
-        protected void UploadButton_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

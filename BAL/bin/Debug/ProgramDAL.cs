@@ -22,10 +22,9 @@ namespace DAL
         public List<MsProgram> GetProgramList()
         {
             dbDataContext db = new dbDataContext();
-
             var hasil = from baris in db.MsPrograms
+                        where baris.status == '1'
                         select baris;
-
             return hasil.ToList();
         }
 
@@ -59,10 +58,11 @@ namespace DAL
                 hasil.os = pro.os;
                 hasil.license = pro.license;
                 hasil.technology = pro.technology;
+                hasil.status = pro.status;
                 try
                 { db.SubmitChanges(); return true; }
                 catch
-               { return false; }
+                { return false; }
 
             }
             else
@@ -123,10 +123,28 @@ namespace DAL
         {
             dbDataContext db = new dbDataContext();
             var cari = (from baris in db.MsPrograms
-                       where baris.idProgram == id
-                       select baris).SingleOrDefault();
+                        where baris.idProgram == id
+                        select baris).SingleOrDefault();
             return (cari == null) ? false : true;
         }
 
+        public bool UpdateStatus(string id)
+        {
+            dbDataContext db = new dbDataContext();
+            var cari = (from baris in db.MsPrograms
+                        where baris.idProgram == id
+                        select baris).SingleOrDefault();
+            if (cari != null)
+            {
+                cari.status = Convert.ToChar("0");
+                try
+                { db.SubmitChanges(); return true; }
+                catch
+                { return false; }
+            }
+            else
+            { return false; }
+
+        }
     }
 }

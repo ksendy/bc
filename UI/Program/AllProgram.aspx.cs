@@ -43,10 +43,16 @@ namespace UI
                     //cetak
                     isi += "<div class='grid1_of_3'>";
                     //display delete kalau admin
+                    string msg = "\'Are You Sure?\'";
                     if (Convert.ToInt32(Session["lvl"]) == 3)
                     {
-                        isi += "<div class='del'><a href='/Program/DeleteProgram.aspx?id=" + probal.idProgram + "'>";
-                        isi += "<img src='/images/delete.png'/></a></div>";
+                        isi += "<div class='del'>";
+                        isi += "<a onclick=\"return confirm(" + msg + ")\" href='/Program/DeleteProgram.aspx?id=" + probal.idProgram + "'>";
+                        isi += "<img src='/images/delete3.png'/></a>";
+                        isi += "</div><div class='edit2'>";
+                        isi += "<a href='/Program/EditProgram.aspx?id=" + probal.idProgram + "'>";
+                        isi += "<img src='/images/edit2.png'/></a>";
+                        isi +="</div>";
                     }
                     isi += "<a href='details.aspx?id=" + probal.idProgram + "'>";
                     isi += "<div class='gambar'><img src='/images/ProgramImg/" + probal.img + "' alt=''/></div>";
