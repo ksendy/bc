@@ -17,3 +17,13 @@ C:\Users\Sendy\Documents\Visual Studio 2010\Projects\ProgramFiles.2.0\UI\bin\DAL
 C:\Users\Sendy\Documents\Visual Studio 2010\Projects\ProgramFiles.2.0\UI\bin\BAL.pdb
 C:\Users\Sendy\Documents\Visual Studio 2010\Projects\ProgramFiles.2.0\UI\bin\DAL.pdb
 C:\Users\Sendy\Documents\Visual Studio 2010\Projects\ProgramFiles.2.0\UI\obj\Debug\UI.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\ProgramFiles3.0\UI\bin\ProgramDAL.cs
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\ProgramFiles3.0\UI\bin\UI.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\ProgramFiles3.0\UI\bin\UI.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\ProgramFiles3.0\UI\bin\BAL.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\ProgramFiles3.0\UI\bin\DAL.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\ProgramFiles3.0\UI\bin\BAL.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\ProgramFiles3.0\UI\bin\DAL.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\ProgramFiles3.0\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\ProgramFiles3.0\UI\obj\Debug\UI.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\ProgramFiles3.0\UI\obj\Debug\UI.pdb

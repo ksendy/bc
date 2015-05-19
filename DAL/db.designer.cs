@@ -22,7 +22,7 @@ namespace DAL
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="ProgramFile")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="ProgramFiles3")]
 	public partial class dbDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -51,7 +51,7 @@ namespace DAL
     #endregion
 		
 		public dbDataContext() : 
-				base(global::DAL.Properties.Settings.Default.ProgramFileConnectionString1, mappingSource)
+				base(global::DAL.Properties.Settings.Default.ProgramFiles3ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -471,10 +471,6 @@ namespace DAL
 			{
 				if ((this._idComment != value))
 				{
-					if (this._MsCustomer.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnidCommentChanging(value);
 					this.SendPropertyChanging();
 					this._idComment = value;
@@ -519,6 +515,10 @@ namespace DAL
 			{
 				if ((this._idCustomer != value))
 				{
+					if (this._MsCustomer.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnidCustomerChanging(value);
 					this.SendPropertyChanging();
 					this._idCustomer = value;
@@ -548,7 +548,7 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MsCustomer_MsComment", Storage="_MsCustomer", ThisKey="idComment", OtherKey="idCustomer", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MsCustomer_MsComment", Storage="_MsCustomer", ThisKey="idCustomer", OtherKey="idCustomer", IsForeignKey=true)]
 		public MsCustomer MsCustomer
 		{
 			get
@@ -565,17 +565,17 @@ namespace DAL
 					if ((previousValue != null))
 					{
 						this._MsCustomer.Entity = null;
-						previousValue.MsComment = null;
+						previousValue.MsComments.Remove(this);
 					}
 					this._MsCustomer.Entity = value;
 					if ((value != null))
 					{
-						value.MsComment = this;
-						this._idComment = value.idCustomer;
+						value.MsComments.Add(this);
+						this._idCustomer = value.idCustomer;
 					}
 					else
 					{
-						this._idComment = default(string);
+						this._idCustomer = default(string);
 					}
 					this.SendPropertyChanged("MsCustomer");
 				}
@@ -667,7 +667,7 @@ namespace DAL
 		
 		private int _lvl;
 		
-		private EntityRef<MsComment> _MsComment;
+		private EntitySet<MsComment> _MsComments;
 		
 		private EntitySet<MsPenjualan> _MsPenjualans;
 		
@@ -703,7 +703,7 @@ namespace DAL
 		
 		public MsCustomer()
 		{
-			this._MsComment = default(EntityRef<MsComment>);
+			this._MsComments = new EntitySet<MsComment>(new Action<MsComment>(this.attach_MsComments), new Action<MsComment>(this.detach_MsComments));
 			this._MsPenjualans = new EntitySet<MsPenjualan>(new Action<MsPenjualan>(this.attach_MsPenjualans), new Action<MsPenjualan>(this.detach_MsPenjualans));
 			OnCreated();
 		}
@@ -948,32 +948,16 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MsCustomer_MsComment", Storage="_MsComment", ThisKey="idCustomer", OtherKey="idComment", IsUnique=true, IsForeignKey=false)]
-		public MsComment MsComment
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MsCustomer_MsComment", Storage="_MsComments", ThisKey="idCustomer", OtherKey="idCustomer")]
+		public EntitySet<MsComment> MsComments
 		{
 			get
 			{
-				return this._MsComment.Entity;
+				return this._MsComments;
 			}
 			set
 			{
-				MsComment previousValue = this._MsComment.Entity;
-				if (((previousValue != value) 
-							|| (this._MsComment.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._MsComment.Entity = null;
-						previousValue.MsCustomer = null;
-					}
-					this._MsComment.Entity = value;
-					if ((value != null))
-					{
-						value.MsCustomer = this;
-					}
-					this.SendPropertyChanged("MsComment");
-				}
+				this._MsComments.Assign(value);
 			}
 		}
 		
@@ -1008,6 +992,18 @@ namespace DAL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_MsComments(MsComment entity)
+		{
+			this.SendPropertyChanging();
+			entity.MsCustomer = this;
+		}
+		
+		private void detach_MsComments(MsComment entity)
+		{
+			this.SendPropertyChanging();
+			entity.MsCustomer = null;
 		}
 		
 		private void attach_MsPenjualans(MsPenjualan entity)
