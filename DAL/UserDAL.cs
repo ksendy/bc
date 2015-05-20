@@ -9,20 +9,17 @@ namespace DAL
     {
         /// <summary>
         /// Function untuk mengambil List data Semua customer
+        /// Yang status nya 1 atau aktif
         /// </summary>
         /// <returns>List dengan tipe data MsCustomer</returns>
-        /// 
         public List<MsCustomer> GetUserList()
         {
             dbDataContext db = new dbDataContext();
-
             var hasil = from baris in db.MsCustomers
+                        where baris.status == '1'
                         select baris;
-
             return hasil.ToList();
-
         }
-
         /// <summary>
         /// Function mengambil 1 data user berdasarkan id, return bisa null
         /// </summary>
@@ -34,14 +31,13 @@ namespace DAL
             var hasil = (from baris in db.MsCustomers
                          where baris.idCustomer == id
                          select baris).SingleOrDefault();
-
             return hasil;
         }
 
         /// <summary>
-        /// Get User By UserName
+        /// Ambil User Berdasarkan username
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="username">username</param>
         /// <returns></returns>
         public MsCustomer GetUserByUsername(string username)
         {
@@ -49,7 +45,6 @@ namespace DAL
             var hasil = (from baris in db.MsCustomers
                          where baris.username == username
                          select baris).SingleOrDefault();
-
             return hasil;
         }
 
@@ -66,14 +61,7 @@ namespace DAL
                          where baris.username == username && baris.pwd == pwd
                          select baris).SingleOrDefault();
 
-            if (hasil != null)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return (hasil != null) ? true : false;
         }
 
 
@@ -85,11 +73,9 @@ namespace DAL
         public bool UpdateUser(MsCustomer customerUpdate)
         {
             dbDataContext db = new dbDataContext();
-
             var update = (from baris in db.MsCustomers
                           where baris.idCustomer == customerUpdate.idCustomer
                           select baris).SingleOrDefault();
-
             if (update != null)
             {
                 update.idCustomer = customerUpdate.idCustomer;
@@ -104,16 +90,14 @@ namespace DAL
                 update.kota = customerUpdate.kota;
                 update.img = customerUpdate.img;
                 update.lvl = customerUpdate.lvl;
-
+                update.status = customerUpdate.status;
                 try
                 { db.SubmitChanges(); return true; }
                 catch
                 { return false; }
             }
             else
-            {
-                return false;
-            }
+            { return false; }
         }
 
         /// <summary>
@@ -126,18 +110,11 @@ namespace DAL
             dbDataContext db = new dbDataContext();
             MsCustomer baru = new MsCustomer();
             baru = customerBaru;
-
             db.MsCustomers.InsertOnSubmit(baru);
-
             try
-            { 
-                db.SubmitChanges();
-                return true;
-            }
-            catch 
-            {
-                return false;
-            }
+            { db.SubmitChanges(); return true; }
+            catch
+            { return false; }
         }
 
         /// <summary>
@@ -153,33 +130,54 @@ namespace DAL
                          select baris).SingleOrDefault();
 
             db.MsCustomers.DeleteOnSubmit(hapus);
-           
             try
-            {
-                db.SubmitChanges();
-                return true;
-            }
+            { db.SubmitChanges(); return true; }
             catch
-            {
-                return false;
-            }
+            { return false; }
         }
 
+        /// <summary>
+        /// Ambil ID terakhir dalam Database User
+        /// return 1 jika tabel masih kosong
+        /// </summary>
+        /// <returns>1 atau Last id Customer</returns>
         public int GetLastId()
         {
             dbDataContext db = new dbDataContext();
             var hasil = (from baris in db.MsCustomers
                          orderby baris.idCustomer descending
-                         select  baris).First();
-            if (hasil == null)
-            {
-                return 1;
-            }
-            else
-            {
-                return Convert.ToInt32(hasil.idCustomer);
-            }
+                         select baris.idCustomer).FirstOrDefault();
+            return (hasil == null) ? 1 : Convert.ToInt32(hasil);
         }
-
+        /// <summary>
+        /// Cek User apakah ada atau tidak
+        /// return true jika ada, false jika tidak ada
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public bool CekUser(string id)
+        {
+            dbDataContext db = new dbDataContext();
+            var hasil = (from baris in db.MsCustomers
+                         where baris.idCustomer == id
+                         select baris.idCustomer).SingleOrDefault();
+            return (hasil != null) ? true : false;
+        }
+        /// <summary>
+        /// Manipulasi Hasil Hapus User, ganti status jadi 0
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public bool ChangeStatus(string id)
+        {
+            dbDataContext db = new dbDataContext();
+            var hasil = (from baris in db.MsCustomers
+                         where baris.idCustomer == id
+                         select baris).SingleOrDefault();
+            if (hasil != null && hasil.status != '0')
+            { hasil.status = '0'; db.SubmitChanges(); return true; }
+            else
+            { return false; }
+        }
     }
 }

@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ProgramFile" Class="dbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=PHEE\SQLEXPRESS;Initial Catalog=ProgramFile;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="ProgramFileConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.MsCD" Member="MsCDs">
+    <Type Name="MsCD">
+      <Column Name="idCD" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="ukuran" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="biaya" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Table Name="dbo.TopLink" Member="TopLinks">
     <Type Name="TopLink">
       <Column Name="idLink" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -7,14 +15,6 @@
       <Column Name="links" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="[level]" Member="level" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.MsCD" Member="MsCDs">
-    <Type Name="MsCD">
-      <Column Name="idCD" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
-      <Column Name="ukuran" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="biaya" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.MsComment" Member="MsComments">
@@ -41,6 +41,7 @@
       <Column Name="kota" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="img" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="lvl" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
       <Association Name="MsCustomer_MsComment" Member="MsComments" ThisKey="idCustomer" OtherKey="idCustomer" Type="MsComment" />
       <Association Name="MsCustomer_MsPenjualan" Member="MsPenjualans" ThisKey="idCustomer" OtherKey="idCustomer" Type="MsPenjualan" />
     </Type>

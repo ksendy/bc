@@ -32,6 +32,8 @@ namespace BAL
         { get; set; }
         public int lvl 
         { get; set; }
+        public char status
+        { get; set; }
 
         public MsCustomer ConvertToMsMsCustomer(MsUserBAL b)
         {
@@ -48,6 +50,7 @@ namespace BAL
             c.kota = b.kota;
             c.img = b.img;
             c.lvl = b.lvl;
+            c.status = b.status;
 
             return c;
         }
@@ -67,6 +70,7 @@ namespace BAL
             b.kota = baru.kota;
             b.img = baru.img;
             b.lvl = baru.lvl;
+            b.status = Convert.ToChar(baru.status);
 
             return b;
         }

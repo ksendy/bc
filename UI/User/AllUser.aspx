@@ -2,9 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 <title>All Users</title>
 <style type="text/css">
-.judulUsr
+h4.judulUsr
 {
-color:#777777;
+color:#777777 !important;
 }
 .GbrUsr
 {
@@ -13,6 +13,34 @@ color:#777777;
     overflow : hidden;
 }
 
+span.b_btm {
+  position: absolute;
+  width: 100%;
+  border-bottom: 6px solid #3CC395;
+  left: 0px;
+  display: block;
+  bottom: 0px;
+  }
+.grids_of_44{
+	text-align:center;
+	margin: 4% 0;
+}
+.grid1_of_44{
+	float: left;
+	width: 20.333%;
+	margin-left: 3.3333%;
+	border: 1px solid rgb(223, 223, 223);
+	position: relative;
+	border-radius : 20px;
+	overflow : hidden;
+}
+@media only screen and (max-width: 480px) {
+	.grid1_of_44 {
+		margin-left:0;
+		float: none;
+		width: 99.333%;
+	}
+}
 </style>
 
 </asp:Content>

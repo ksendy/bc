@@ -27,11 +27,13 @@ namespace BAL
             return dal.UpdateProgram(probal.ConvertToMsProgram(probal));
         }
 
-        public List<MsProgramBAL> GetProgramList()
+        public List<MsProgramBAL> GetProgramList(string page)
         {
             ProgramDAL dal = new ProgramDAL();
+            List<MsProgram> p = new List<MsProgram>();
+            p = (page == "home") ? dal.GetProgramListByRating() : dal.GetProgramList();
             List<MsProgramBAL> liste = new List<MsProgramBAL>();
-            foreach (MsProgram pro in dal.GetProgramList())
+            foreach (MsProgram pro in p)
             {
                 MsProgramBAL baru = new MsProgramBAL();
                 liste.Add(baru.ConvertToMsProgramBAL(pro));
@@ -61,7 +63,7 @@ namespace BAL
             double newRate = 0;
             ProgramDAL dal = new ProgramDAL();
             MsProgram probal = dal.GetProgramById(id);
-            if (!probal.rating.HasValue)
+            if (!probal.rating.HasValue || probal.rating == 0)
             { newRate = InputRating; }
             else
             {

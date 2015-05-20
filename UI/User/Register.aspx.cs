@@ -36,7 +36,8 @@ namespace UI
                kodepos = kdpos.Text,
                img = "anon.jpg",
                lvl = 2,
-               pwd = pwrd.Text
+               pwd = pwrd.Text,
+               status = '1'
            };
             if (FileUploadControl.HasFile)
             {

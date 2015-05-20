@@ -27,7 +27,15 @@ namespace DAL
                         select baris;
             return hasil.ToList();
         }
-
+        public List<MsProgram> GetProgramListByRating()
+        {
+            dbDataContext db = new dbDataContext();
+            var hasil = from baris in db.MsPrograms
+                        where baris.status == '1'
+                        orderby baris.rating descending
+                        select baris;
+            return hasil.ToList();
+        }
         public MsProgram GetProgramById(string id)
         {
             dbDataContext db = new dbDataContext();

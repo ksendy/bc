@@ -1580,6 +1580,14 @@ p.para{
 	.grid1_of_4:nth-child(3){
 		margin-left: 0;
 	}
+	.grid1_of_44 {
+		float: left;
+		width: 100%;
+		margin-top: 2.3333%;
+	}
+	.grid1_of_44:nth-child(4){
+		margin-left: 0;
+	}
 	.price h4 {
 		font-size: 1.4em;
 	}

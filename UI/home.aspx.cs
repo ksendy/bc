@@ -19,10 +19,11 @@ namespace UI
             int perPage = 9;
             int page = Convert.ToInt32(Request.QueryString["page"]);
             page =  (Request.QueryString["page"] == null || Request.QueryString["page"] == "1") ? 0 : page * perPage;
-
+            List<MsProgramBAL> p = new List<MsProgramBAL>();
             ProgramBAL bal = new ProgramBAL(); int counter = 1;
+            p = bal.GetProgramList("home");
             string texthtml = "<div class='grids_of_3'>";
-            foreach (MsProgramBAL b in bal.GetProgramList().Skip(page).Take(perPage))
+            foreach (MsProgramBAL b in p.Skip(page).Take(perPage))
             {
                 texthtml += "<div class='grid1_of_3'>";
                 texthtml += "<a href='/Program/details.aspx?id=" + b.idProgram + "'>";
@@ -49,9 +50,9 @@ namespace UI
             //pagination
 
             int i = 1;
-            int k = (bal.GetProgramList().Count % perPage) != 0 ? 0 : 1;
-            k = bal.GetProgramList().Count == perPage ? 0 : 1;
-            int j = (bal.GetProgramList().Count/perPage)+k;           
+            int k = (p.Count % perPage) != 0 ? 0 : 1;
+            k = p.Count == perPage ? 0 : 1;
+            int j = (p.Count/perPage)+k;           
             do
             {
                 pagination.InnerHtml += " &nbsp; <a href='/home.aspx?page=" + i + "'>" + i + "</a> &nbsp; ";

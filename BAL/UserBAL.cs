@@ -90,7 +90,17 @@ namespace BAL
             return mu;
 
         }
+        public bool CekUser(string id)
+        {
+            UserDAL dal = new UserDAL();
+            return dal.CekUser(id);
+        }
 
+        public bool ChangeStatus(string id)
+        {
+            UserDAL dal = new UserDAL();
+            return dal.ChangeStatus(id);
+        }
 
 
     }

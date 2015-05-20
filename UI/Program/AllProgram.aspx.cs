@@ -33,7 +33,7 @@ namespace UI
             technologies = bal.GetTechList();
             foreach (string t in technologies)
             { tec.InnerHtml += "<a href='/Program/AllProgram.aspx?t=" + t + "'><div class='tech'>" + t + "</div></a>"; }
-            lb = (tt == null) ? bal.GetProgramList() : bal.GetProgramListByTech(tt);
+            lb = (tt == null) ? bal.GetProgramList("All") : bal.GetProgramListByTech(tt);
             int counter = 0;
             if (lb != null)
             {
@@ -43,11 +43,10 @@ namespace UI
                     //cetak
                     isi += "<div class='grid1_of_3'>";
                     //display delete kalau admin
-                    string msg = "\'Are You Sure?\'";
                     if (Convert.ToInt32(Session["lvl"]) == 3)
                     {
                         isi += "<div class='del'>";
-                        isi += "<a onclick=\"return confirm(" + msg + ")\" href='/Program/DeleteProgram.aspx?id=" + probal.idProgram + "'>";
+                        isi += "<a onclick=\"return confirm(" + "\'Are You Sure?\'" + ")\" href='/Program/DeleteProgram.aspx?id=" + probal.idProgram + "'>";
                         isi += "<img src='/images/delete3.png'/></a>";
                         isi += "</div><div class='edit2'>";
                         isi += "<a href='/Program/EditProgram.aspx?id=" + probal.idProgram + "'>";
