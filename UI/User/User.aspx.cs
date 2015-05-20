@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BAL;
+using System.IO;
 
 namespace UI
 {
@@ -44,13 +45,13 @@ namespace UI
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string uid = Request.QueryString["uid"];
+            string id = Request.QueryString["id"];
             UserBAL ub = new UserBAL();
             MsUserBAL mu = new MsUserBAL();
-            mu = ub.GetUserById(uid);
+            mu = ub.GetUserById(id);
 
-            mu.idCustomer = uid;
-            mu.img = Image1.ImageUrl;
+            mu.idCustomer = id;
+            //mu.img = Image1.ImageUrl;
             mu.nama = Names.Text;
             mu.username = usrnm.Text;
             mu.email = mail.Text;
@@ -58,8 +59,27 @@ namespace UI
             mu.alamat = alamat.Value;
             mu.kota = city.Text;
             mu.provinsi = prov.Text;
+            if (FileUploadControl.HasFile)
+            {
+                try
+                {
+                    string uploadFolder = Request.PhysicalApplicationPath + "images\\usrImg\\";
+                    string extension = Path.GetExtension(FileUploadControl.PostedFile.FileName);
+                    FileUploadControl.SaveAs(uploadFolder + id + extension);
+                    Response.Write("<script>alert('File uploaded!')</script>");
+                    mu.img = id + extension;
+                }
+                catch (Exception ex)
+                {
+                    string err = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
+                    Response.Write("<script>alert('" + err + "')</script>");
+                }
+            }
+            else
+            { mu.img = "anon.jpg"; }
+            Session["msg"] = ub.UpdateUser(mu)? "Update Success!": "Update Failed";
+            Response.Redirect("/User/AllUser.aspx");
 
-            ub.UpdateUser(mu);
 
         }
     }
