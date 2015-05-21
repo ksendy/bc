@@ -51,13 +51,11 @@ namespace BAL
             c.img = b.img;
             c.lvl = b.lvl;
             c.status = b.status;
-
             return c;
         }
         public MsUserBAL ConvertToMsMsUserBAL(MsCustomer baru)
         {
-            MsUserBAL b = new MsUserBAL();
-            
+            MsUserBAL b = new MsUserBAL();          
             b.idCustomer = baru.idCustomer;
             b.nama = baru.nama;
             b.alamat = baru.alamat;
@@ -71,11 +69,7 @@ namespace BAL
             b.img = baru.img;
             b.lvl = baru.lvl;
             b.status = Convert.ToChar(baru.status);
-
             return b;
         }
-
-
-
     }
 }
