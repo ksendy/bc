@@ -24,9 +24,9 @@ namespace UI
             MsProgramBAL b = new MsProgramBAL();
 
             if (!probal.CekProgram(id))
-            { Session["msg"] = "Hacking Attempt!"; Response.Redirect("/Program/AllProgram.aspx"); } 
+            { Session["msg"] = "Hacking Attempt!"; Response.Redirect("/Program/AllProgram.aspx"); }
             b = probal.getProgramById(id);
-           
+
             Session["produk"] = b;
             string title = b.title;
             Label1.Text = "<h3>" + title + "</h3>";
@@ -40,7 +40,7 @@ namespace UI
             descr.InnerHtml += b.descr;
             rating.InnerHtml += b.rating;
             ra.InnerHtml = (b.rating.ToString().Length >= 4) ? b.rating.ToString().Substring(0, 4) : b.rating.ToString();
-            
+
             //ambil comment
 
             CommentBAL com = new CommentBAL();
@@ -65,15 +65,21 @@ namespace UI
             ProgramBAL probal = new ProgramBAL();
             MsProgramBAL b = new MsProgramBAL();
             b = probal.getProgramById(id);
+            int tot = (Session["total"] == null) ? 0 : Convert.ToInt32(Session["total"]);
+            tot += b.size;
 
-            List<string> order = new List<string>();
-            if (Session["order"] != null)
+            if (tot < 100)
             {
-                order = (List<string>)Session["order"];
+                List<string> order = new List<string>();
+                if (Session["order"] != null)
+                { order = (List<string>)Session["order"]; }
+                order.Add(b.idProgram);
+                Session["order"] = order;
+                Session["msg"] = "Program Added to Cart";
+                Session["total"] = tot;
             }
-            order.Add(b.idProgram);
-            Session["order"] = order;
-            Session["msg"] = "Program Added to Cart";
+            else { Session["msg"] = "Full CD, Total size bigger than 100MB, Please Check Out"; }
+            
             Response.Redirect("/Program/AllProgram.aspx");
         }
 
@@ -109,9 +115,7 @@ namespace UI
             MsProgramBAL probal = new MsProgramBAL();
             double rating = bal.getProgramById(id).rating;
             if (rate.SelectedIndex == 0 || Convert.ToInt32(rate.Value) < 1 || Convert.ToInt32(rate.Value) > 5)
-            {
-                Response.Write("<script>alert('Failed to Rate')</script>");
-            }
+            { Response.Write("<script>alert('Failed to Rate')</script>"); }
             else
             {
                 if (bal.UpdateNewRating(id, Convert.ToInt32(rate.Value)))

@@ -71,7 +71,6 @@ namespace DAL
                 { db.SubmitChanges(); return true; }
                 catch
                 { return false; }
-
             }
             else
             { return false; }
@@ -152,7 +151,14 @@ namespace DAL
             }
             else
             { return false; }
-
+        }
+        public List<MsProgram> SearchProgram(string word)
+        {
+            dbDataContext db = new dbDataContext();
+            var cari = from baris in db.MsPrograms
+                       where baris.title.Contains(word)
+                       select baris;
+            return cari.ToList();
         }
     }
 }

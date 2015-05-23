@@ -133,5 +133,23 @@ namespace BAL
         /// <returns>true = BERHASIL, False = GAGAL</returns>
         public bool UpdateStatus(string id)
         { ProgramDAL dal = new ProgramDAL(); return dal.UpdateStatus(id); }
+
+        /// <summary>
+        /// Cari program berdasarkan judul
+        /// </summary>
+        /// <param name="words">sebagian kalimat dicari</param>
+        /// <returns></returns>
+        public List<MsProgramBAL> SearchProgram(string words)
+        { 
+            ProgramDAL dal = new ProgramDAL();
+            List<MsProgramBAL> lb = new List<MsProgramBAL>();
+            foreach(MsProgram pro in dal.SearchProgram(words))
+            {
+                MsProgramBAL pb = new MsProgramBAL();
+                pb = pb.ConvertToMsProgramBAL(pro);
+                lb.Add(pb);
+            }
+            return lb;
+        }
     }
 }

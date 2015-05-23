@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AboutUs.aspx" />
+    <Content Include="Search.aspx" />
     <Content Include="User\DeleteUser.aspx" />
     <Content Include="Program\EditProgram.aspx" />
     <Content Include="Program\DeleteProgram.aspx" />
@@ -190,6 +191,13 @@
     </Compile>
     <Compile Include="AboutUs.aspx.designer.cs">
       <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\DeleteUser.aspx.cs">
       <DependentUpon>DeleteUser.aspx</DependentUpon>
