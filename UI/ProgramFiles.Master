@@ -84,7 +84,7 @@
 		</ul>
 		</div>
 		<div class="h_search">
-    		<form method="get" action="Search.aspx">
+    		<form method="get" action="/Search.aspx">
     			<input type="text" name="search" value="" />
     			<input type="submit" value="" />
     		</form>
