@@ -57,8 +57,6 @@ namespace UI
             }
             else
             { ubal.img = "anon.jpg"; }
-
-
             if (ub.AddUser(ubal) && Page.IsValid && ub.getUserByUsername(ubal.username) == null)
             { Response.Write("<script>alert('Register Success')</script>"); }
             else

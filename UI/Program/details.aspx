@@ -143,9 +143,9 @@
                                     <figure><img src="/images/delivery.png" alt=""/></figure>
                                     <h5>
                                         <span>Free Shipping</span><br />
-                                        on orders over $99.</h5>
+                                        on orders over 100MB.</h5>
                                     <p>
-                                        This offer is valid on all our store items.</p>
+                                        This offer is valid on all our items.</p>
                                 </a>
                             </div>
                             <div class="brands">

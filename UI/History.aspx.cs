@@ -48,7 +48,6 @@ namespace UI
                 }
             }
             tbJual.InnerHtml += "</table>";
-
             //pagination
             int i = 1;
             int k = (pbal.GetPenjualanList().Count % perPage) != 0 ? 0 : 1;

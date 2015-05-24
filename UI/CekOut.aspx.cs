@@ -71,7 +71,6 @@ namespace UI
             }
             else
             {Session["msg"] = "Cek Out Gagal!";}
-
         }
     }
 }

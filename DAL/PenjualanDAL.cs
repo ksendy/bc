@@ -7,13 +7,10 @@ namespace DAL
 {
     public class PenjualanDAL
     {
-
         public bool AddPenjualan(MsPenjualan baru)
         {
             dbDataContext db = new dbDataContext();
-
             db.MsPenjualans.InsertOnSubmit(baru);
-
             try
             { db.SubmitChanges(); return true; }
             catch
@@ -26,18 +23,15 @@ namespace DAL
 
             var hasil = from baris in db.MsPenjualans
                         select baris;
-
             return hasil.ToList();
         }
 
         public MsPenjualan GetPenjualanById(string id)
         {
             dbDataContext db = new dbDataContext();
-
             var hasil = (from baris in db.MsPenjualans
                          where baris.idPenjualan == id
                          select baris).SingleOrDefault();
-
             return hasil;
         }
 
@@ -45,7 +39,6 @@ namespace DAL
         public bool UpdatePenjualan(MsPenjualan p)
         {
             dbDataContext db = new dbDataContext();
-
             var hasil = (from baris in db.MsPenjualans
                          where baris.idPenjualan == p.idPenjualan
                          select baris).SingleOrDefault();
@@ -59,12 +52,9 @@ namespace DAL
                 { db.SubmitChanges(); return true; }
                 catch
                 { return false; }
-
             }
             else
-            {
-                return false;
-            }
+            { return false; }
         }
 
         public int GetNextId()
@@ -77,7 +67,6 @@ namespace DAL
             { return 1; }
             else
             { return Convert.ToInt32(hasil.idPenjualan) + 1; }
-
         }
 
         public bool DeletePenjualan(string id)
@@ -95,9 +84,7 @@ namespace DAL
                 { return false; }
             }
             else
-            {
-                return false;
-            }
+            { return false; }
         }
 
     }

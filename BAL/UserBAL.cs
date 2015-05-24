@@ -111,7 +111,5 @@ namespace BAL
         /// <returns>true = BERHASIL, False = GAGAL</returns>
         public bool ChangeStatus(string id)
         { UserDAL dal = new UserDAL(); return dal.ChangeStatus(id); }
-
-
     }
 }

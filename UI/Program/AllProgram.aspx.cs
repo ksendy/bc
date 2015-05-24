@@ -34,6 +34,7 @@ namespace UI
             foreach (string t in technologies)
             { tec.InnerHtml += "<a href='/Program/AllProgram.aspx?t=" + t + "'><div class='tech'>" + t + "</div></a>"; }
             lb = (tt == null) ? bal.GetProgramList("All") : bal.GetProgramListByTech(tt);
+            jdlt.InnerText = (tt == null) ? "ALL PROGRAM" : tt;
             int counter = 0;
             if (lb != null)
             {

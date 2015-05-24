@@ -7,12 +7,10 @@ namespace DAL
 {
     public class ProgramDAL
     {
-
         public bool AddProgram(MsProgram baru)
         {
             dbDataContext db = new dbDataContext();
             db.MsPrograms.InsertOnSubmit(baru);
-
             try
             { db.SubmitChanges(); return true; }
             catch
@@ -39,7 +37,6 @@ namespace DAL
         public MsProgram GetProgramById(string id)
         {
             dbDataContext db = new dbDataContext();
-
             var hasil = (from baris in db.MsPrograms
                          where baris.idProgram == id
                          select baris).SingleOrDefault();
@@ -49,11 +46,9 @@ namespace DAL
         public bool UpdateProgram(MsProgram pro)
         {
             dbDataContext db = new dbDataContext();
-
             var hasil = (from baris in db.MsPrograms
                          where baris.idProgram == pro.idProgram
                          select baris).SingleOrDefault();
-
             if (hasil != null)
             {
                 hasil.idProgram = pro.idProgram;
@@ -82,7 +77,6 @@ namespace DAL
             var hapus = (from baris in db.MsPrograms
                          where baris.idProgram == id
                          select baris).SingleOrDefault();
-
             if (hapus != null)
             {
                 db.MsPrograms.DeleteOnSubmit(hapus);

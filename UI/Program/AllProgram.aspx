@@ -11,8 +11,8 @@
             <div class="main">
                 <div id="tec" runat="server">
                 </div>
-                <h2 class="style top">
-                    All Program</h2>
+                <h2 class="style top" runat="server" id="jdlt">
+                    </h2>
                 <div runat="server" id="pro">
                 </div>
             </div>

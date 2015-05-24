@@ -25,7 +25,6 @@ namespace BAL
             jual.idCustomer = b.idCustomer;
             jual.tglTrans = Convert.ToDateTime(b.tglTrans);
             jual.detail = b.detail;
-
             return jual;
         }
 
@@ -37,10 +36,7 @@ namespace BAL
             b.idCustomer = jual.idCustomer;   
             b.tglTrans = Convert.ToString(jual.tglTrans);
             b.detail = jual.detail;
-
             return b;
         }
-
-
     }
 }

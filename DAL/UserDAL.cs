@@ -63,8 +63,6 @@ namespace DAL
 
             return (hasil != null) ? true : false;
         }
-
-
         /// <summary>
         /// Update User
         /// </summary>

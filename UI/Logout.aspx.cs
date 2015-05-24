@@ -20,9 +20,7 @@ namespace UI
             }
             Session.RemoveAll();
             Session.Abandon();
-            Response.Redirect("Home.aspx");
-            
-            
+            Response.Redirect("Home.aspx");                  
         }
     }
 }
