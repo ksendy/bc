@@ -52,7 +52,7 @@
                     </div>
                     <div class="contact-form" style="float: left; width: 50%;">
                         <h3>
-                            Register</h3>
+                            Year</h3>
                         <div>
                             <asp:DropDownList ID="DropDownList2" runat="server" 
                                 onselectedindexchanged="DropDownList2_SelectedIndexChanged" AutoPostBack="true">

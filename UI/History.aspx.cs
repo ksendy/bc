@@ -21,11 +21,10 @@ namespace UI
             //pagination inisiasi
             int perPage = 9;
             int page = Convert.ToInt32(Request.QueryString["page"]);
-            page = (Request.QueryString["page"] == null || Request.QueryString["page"] == "1") ? 0 : page * perPage;
+            page = (Request.QueryString["page"] == null) ? 0 : (page-1) * perPage;
 
             if (!IsPostBack)
             {
-
                 string sort = Request.QueryString["s"];
                 int zahl = Convert.ToInt32(Request.QueryString["z"]);
                 PenjualanBAL pbal = new PenjualanBAL();
