@@ -87,5 +87,35 @@ namespace DAL
             { return false; }
         }
 
+        public List<MsPenjualan> getPenjualanByMonth(int mo)
+        {
+            dbDataContext db = new dbDataContext();
+            var hapus = from baris in db.MsPenjualans
+                        where baris.tglTrans.Month == mo
+                        select baris;
+            return hapus.ToList();
+        }
+        public List<MsPenjualan> getPenjualanByYear(int ye)
+        {
+            dbDataContext db = new dbDataContext();
+            var hapus = from baris in db.MsPenjualans
+                        where baris.tglTrans.Year == ye
+                        select baris;
+            return hapus.ToList();
+        }
+        public List<int> GetListMonth()
+        {
+            dbDataContext db = new dbDataContext();
+            var cari = (from baris in db.MsPenjualans
+                        select baris.tglTrans.Month).Distinct();
+            return cari.ToList();
+        }
+        public List<int> GetListYear()
+        {
+            dbDataContext db = new dbDataContext();
+            var cari = (from baris in db.MsPenjualans
+                        select baris.tglTrans.Year).Distinct();
+            return cari.ToList();
+        }
     }
 }

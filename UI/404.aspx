@@ -10,7 +10,7 @@
                 <div class="contact">
                     <div class="contact-form">
                         <div style="width:100%; margin: auto; padding:auto;">
-                            <img style="width:inherit;" src="http://adsoftheworld.com/sites/default/files/media-vimeo/70533052.jpg" alt="ERROR 404" />
+                            <img style="width:inherit;" src="/images/404.jpg" alt="ERROR 404" />
                         </div>
                     </div>
                 </div>

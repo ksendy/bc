@@ -154,5 +154,6 @@ namespace DAL
                        select baris;
             return cari.ToList();
         }
+
     }
 }

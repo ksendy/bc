@@ -19,7 +19,9 @@ namespace UI
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+
             UserBAL ub = new UserBAL();
+
             int id = Convert.ToInt32(ub.GetLastId()) + 1;
             Pass pa = new Pass();
             string ids = pa.AddZero(id.ToString());
@@ -39,28 +41,34 @@ namespace UI
                pwd = pwrd.Text,
                status = '1'
            };
-            if (FileUploadControl.HasFile)
+
+            if (Page.IsValid && !ub.CekUser(ids))
             {
-                try
+                
+                if (FileUploadControl.HasFile)
                 {
-                    string uploadFolder = Request.PhysicalApplicationPath + "images\\usrImg\\";
-                    string extension = Path.GetExtension(FileUploadControl.PostedFile.FileName);
-                    FileUploadControl.SaveAs(uploadFolder + ids + extension);
-                    Response.Write("<script>alert('File uploaded!')</script>");
-                    ubal.img = ids + extension;
+                    try
+                    {
+                        string uploadFolder = Request.PhysicalApplicationPath + "images\\usrImg\\";
+                        string extension = Path.GetExtension(FileUploadControl.PostedFile.FileName);
+                        FileUploadControl.SaveAs(uploadFolder + ids + extension);
+                        Response.Write("<script>alert('File uploaded!')</script>");
+                        ubal.img = ids + extension;
+                    }
+                    catch (Exception ex)
+                    {
+                        string err = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
+                        Response.Write("<script>alert('" + err + "')</script>");
+                    }
                 }
-                catch (Exception ex)
-                {
-                    string err = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
-                    Response.Write("<script>alert('" + err + "')</script>");
-                }
+                else
+                { ubal.img = "anon.jpg"; }
+                ub.AddUser(ubal);
+                Response.Write("<script>alert('Register Success')</script>");
+                Response.Redirect("/Login.aspx");
             }
             else
-            { ubal.img = "anon.jpg"; }
-            if (ub.AddUser(ubal) && Page.IsValid && ub.getUserByUsername(ubal.username) == null)
-            { Response.Write("<script>alert('Register Success')</script>"); }
-            else
-            { Response.Write("<script>alert('Register Failed')</script>"); }
+            { Response.Write("<script>alert('Username Already Exist')</script>"); }
         }
     }
 }

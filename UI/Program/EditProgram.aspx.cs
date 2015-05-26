@@ -37,14 +37,15 @@ namespace UI
         {
             ProgramBAL pb = new ProgramBAL();
             MsProgramBAL pro = new MsProgramBAL();
-             string id = Request.QueryString["id"];
-            pro = pb.getProgramById(id);            
-                pro.title = title.Text;
-                pro.descr = descr.Text;
-                pro.size = Convert.ToInt32(size.Text);
-                pro.os = os.Text;
-                pro.license = license.Text;
-                pro.technology = tech.Text;
+            Pass p = new Pass();
+            string id = Request.QueryString["id"];
+            pro = pb.getProgramById(id);
+            pro.title = title.Text;
+            pro.descr = descr.Text;
+            pro.size = Convert.ToInt32(size.Text);
+            pro.os = os.Text;
+            pro.license = license.Text;
+            pro.technology = tech.Text;
             if (FileUploadControl.HasFile)
             {
                 try
@@ -53,7 +54,7 @@ namespace UI
                     string extension = Path.GetExtension(FileUploadControl.PostedFile.FileName);
                     FileUploadControl.SaveAs(uploadFolder + id + extension);
                     Response.Write("<script>alert('File uploaded!')</script>");
-                    pro.img = id + extension;
+                    pro.img = p.AddZero(id) + extension;
                 }
                 catch (Exception ex)
                 {

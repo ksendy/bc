@@ -45,8 +45,6 @@ namespace BAL
             if (dal.GetUserByUsername(b.username) == null)
             {
                 //input user id
-                int newId = dal.GetLastId() + 1;
-                b.idCustomer = newId.ToString();
                 return dal.AddUser(b.ConvertToMsMsCustomer(b));
             }
             return false;

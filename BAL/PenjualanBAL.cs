@@ -67,6 +67,34 @@ namespace BAL
         public int GetNextId()
         { PenjualanDAL dal = new PenjualanDAL(); return dal.GetNextId(); }
 
+        public List<MsPenjualanBAL> GetListByDate(string type, int search)
+        {
+            PenjualanDAL dal = new PenjualanDAL();
+            List<MsPenjualan> lp = new List<MsPenjualan>();
+            List<MsPenjualanBAL> baru = new List<MsPenjualanBAL>();
+            if (type == "mo")
+            { lp = dal.getPenjualanByMonth(search); }
+            else if (type == "ye")
+            { lp = dal.getPenjualanByYear(search); }
+            else
+            { return null; }
+            foreach (MsPenjualan jual in lp)
+            {
+                MsPenjualanBAL b = new MsPenjualanBAL();
+                baru.Add(b.ConvertToMsPenjualanBAL(jual));
+            }
+            return baru;
+        }
 
+        public List<int> GetListMonth()
+        {
+            PenjualanDAL dal = new PenjualanDAL();
+            return dal.GetListMonth();
+        }
+        public List<int> GetListYear()
+        {
+            PenjualanDAL dal = new PenjualanDAL();
+            return dal.GetListYear();
+        }
     }
 }

@@ -18,7 +18,7 @@ namespace UI
             //inisiasi pagination
             int perPage = 9;
             int page = Convert.ToInt32(Request.QueryString["page"]);
-            page =  (Request.QueryString["page"] == null || Request.QueryString["page"] == "1") ? 0 : page * perPage;
+            page =  (Request.QueryString["page"] == null) ? 0 : (page-1) * perPage;
             List<MsProgramBAL> p = new List<MsProgramBAL>();
             ProgramBAL bal = new ProgramBAL(); int counter = 1;
             p = bal.GetProgramList("home");

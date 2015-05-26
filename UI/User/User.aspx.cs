@@ -49,7 +49,8 @@ namespace UI
             UserBAL ub = new UserBAL();
             MsUserBAL mu = new MsUserBAL();
             mu = ub.GetUserById(id);
-
+            Pass p = new Pass();
+            id = p.AddZero(id);
             mu.idCustomer = id;
             //mu.img = Image1.ImageUrl;
             mu.nama = Names.Text;
@@ -75,8 +76,6 @@ namespace UI
                     Response.Write("<script>alert('" + err + "')</script>");
                 }
             }
-            else
-            { mu.img = "anon.jpg"; }
             Session["msg"] = ub.UpdateUser(mu)? "Update Success!": "Update Failed";
             Response.Redirect("/User/AllUser.aspx");
 

@@ -22,7 +22,7 @@ namespace UI
             //inisiasi pagination
             int perPage = 9;
             int page = Convert.ToInt32(Request.QueryString["page"]);
-            page = (Request.QueryString["page"] == null || Request.QueryString["page"] == "1") ? 0 : page * perPage;
+            page = (Request.QueryString["page"] == null) ? 0 : (page-1) * perPage;
 
 
             ProgramBAL bal = new ProgramBAL();
@@ -39,7 +39,7 @@ namespace UI
             if (lb != null)
             {
                 string isi = "<div class='grids_of_3'>";
-                foreach (MsProgramBAL probal in lb)
+                foreach (MsProgramBAL probal in lb.Skip(page).Take(perPage))
                 {
                     //cetak
                     isi += "<div class='grid1_of_3'>";
